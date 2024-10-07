@@ -1,5 +1,5 @@
-import BackDrop from '../BackDrop/BackDrop.tsx';
-import * as React from 'react';
+import BackDrop from "../BackDrop/BackDrop.tsx";
+import * as React from "react";
 interface Props {
   show: boolean;
   title?: string;
@@ -7,12 +7,15 @@ interface Props {
   closeModal: () => void;
 }
 
-const Modal: React.FC <Props> = ({show, title, content, closeModal}) => {
+const Modal: React.FC<Props> = ({ show, title, content, closeModal }) => {
   return (
     <div>
       <>
-        <BackDrop show={show}/>
-        <div className="modal show" style={{display: show ? 'block' : 'none'}}>
+        <BackDrop show={show} />
+        <div
+          className="modal show"
+          style={{ display: show ? "block" : "none" }}
+        >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
@@ -20,13 +23,14 @@ const Modal: React.FC <Props> = ({show, title, content, closeModal}) => {
               </div>
               <p>{content}</p>
               <div className="modal-footer">
-                <button onClick={closeModal} className="btn btn-primary">Close</button>
+                <button onClick={closeModal} className="btn btn-primary">
+                  Close
+                </button>
               </div>
             </div>
           </div>
         </div>
       </>
-
     </div>
   );
 };
