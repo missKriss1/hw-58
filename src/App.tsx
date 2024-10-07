@@ -17,23 +17,24 @@ const App = () => {
   };
 
   return (
-    <div className="container text-center">
-      <button
-        className="btn btn-primary mt-4 "
-        onClick={() => setShowModal(!showModal)}
-      >
-        Open a modal window
-      </button>
+    <div className="container text-center d-flex flex-column align-items-center">
+      <div>
+        <button
+          className="btn btn-primary mt-4 "
+          onClick={() => setShowModal(!showModal)}
+        >
+          Open a modal window
+        </button>
 
-      <Modal
-        show={showModal}
-        title="Some kinda modal title"
-        content="This is modal content"
-        closeModal={closeModalWindow}
-      />
-
+        <Modal
+          show={showModal}
+          title="Some kinda modal title"
+          content="This is modal content"
+          closeModal={closeModalWindow}
+        />
+      </div>
       <div className="mt-4 w-25">
-        <Alert type="warning" show={showAlerts[0]} />
+        <Alert type="warning" show={showAlerts[0]}/>
         <Alert
           type="success"
           closeAlert={() => closeAlertWindow(1)}
